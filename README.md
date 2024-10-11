@@ -1,6 +1,6 @@
 # Quiz
 
-Quiz backend repository which is setup with nodejs with typescript for APIs
+Quiz backend repository which is setup with nodejs and typescript for APIs
 
 ### Prerequisites
 
