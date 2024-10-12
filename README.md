@@ -25,12 +25,29 @@ npm install
 yarn install
 ```
 
-### Run the application
+4. Create your .env file then copy paste .env.local file.
 
+
+### Run the application 
+
+You can run both frontend and backend concurrently using command:
 ```
 npm run dev
 # or
 yarn dev
+```
+Or You can run both frontend and backend individually using command:
+
+```
+npm run backend
+# or
+yarn backend
+```
+then
+```
+npm run frontend
+# or
+yarn frontend
 ```
 
 - Visit http://localhost:3000 in your browser to view the application.
@@ -50,4 +67,4 @@ yarn lint
 
 - First run the project by above command
 - Then, open the postman or similar tool
-- Add following URL `http://localhost:3000/` along with POST method
+- Add following URL `http://localhost:3001/` along with POST method

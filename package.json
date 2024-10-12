@@ -6,13 +6,16 @@
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "start": "node dist/index.js",
-    "dev": "nodemon -r tsconfig-paths/register  src/index.ts"
+    "dev": "concurrently \"nodemon -r tsconfig-paths/register  src/index.ts\" \"npm run dev-frontend\"",
+    "backend": "nodemon -r tsconfig-paths/register  src/index.ts",
+    "frontend": "cd frontend && npm run dev"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
