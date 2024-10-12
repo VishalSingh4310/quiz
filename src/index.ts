@@ -1,12 +1,17 @@
 import dbConnection from '@config/db.config';
-import * as express from 'express';
+import auth from '@routes/auth';
+import users from '@routes/users';
+import express from 'express';
 const app = express();
 
 dbConnection();
-
 app.use(express.json());
 
 // Routes
+app.use('/api/auth', auth);
+app.use('/api/users', users);
+
+// Default Route
 app.use('/', (req, res) => {
   res.send('Default Route');
 });
