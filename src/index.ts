@@ -1,6 +1,8 @@
 import dbConnection from '@config/db.config';
 import auth from '@routes/auth';
+import quiz from '@routes/quiz';
 import users from '@routes/users';
+import question from '@routes/questions';
 import express from 'express';
 const app = express();
 
@@ -10,6 +12,8 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', auth);
 app.use('/api/users', users);
+app.use('/api/quiz', quiz);
+app.use('/api/question', question);
 
 // Default Route
 app.use('/', (req, res) => {

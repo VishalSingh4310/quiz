@@ -8,7 +8,7 @@ router.post('/login', async (req, res) => {
   const { password, email } = req.body;
 
   try {
-    const userExist = await User.findOne({ email });
+    const userExist = await User.findOne({ email }).lean();
     if (userExist) {
       const validPass = await comparePassword(password, userExist.password);
       if (!validPass) {
@@ -28,7 +28,7 @@ router.post('/login', async (req, res) => {
 router.post('/register', async (req, res) => {
   try {
     const hasPassword = await hashPassword(req.body.password);
-    const userExists = await User.findOne({ email: req.body.email });
+    const userExists = await User.findOne({ email: req.body.email }).lean();
     if (!userExists) {
       let user = new User({
         email: req.body.email,
