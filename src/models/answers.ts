@@ -2,7 +2,7 @@ import mongoose, { Schema, Types } from 'mongoose';
 
 const answerSchema = new Schema({
   questionId: {
-    type: { type: Types.ObjectId, ref: 'questions' }
+    type: { type: String }
   },
   answer: {
     type: String

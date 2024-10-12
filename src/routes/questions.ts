@@ -14,7 +14,7 @@ router.put('/', authMiddleware, async (req, res) => {
       { upsert: true, new: true }
     );
     await Answer.findOneAndUpdate(
-      { questionId: result._id },
+      { questionId: result._id.toString() },
       { $set: { answer } },
       { upsert: true, new: true }
     );

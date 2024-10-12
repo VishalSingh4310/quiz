@@ -12,6 +12,9 @@ const quizSchema = new Schema({
   description: {
     type: String
   },
+  instructions: {
+    type: [String]
+  },
   totalPoints: {
     type: Number,
     default: 0
